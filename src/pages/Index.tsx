@@ -32,14 +32,17 @@ const Index = () => {
 
       <header className="relative flex flex-row items-center justify-between py-5 px-10 w-full mx-auto bg-white/30 backdrop-blur-md rounded-lg shadow-md">
      
-        <div className="">
+        <div className="flex flex-row gap-4 items-center justify-center">
           <Link to="/" className="flex items-center">
-            {/* <img src="./flexkit-name-logo.svg" width={120} alt="Flexkit Logo" /> */}
+            <img src="./public/its_arty.png" width={35} alt="arty_codes-image" />
           </Link>
+          <h1 className='text-2xl font-bold'>
+            ARTY CODES
+          </h1>
         </div>
 
        
-        <nav className="flex items-center justify-between w-1/2">
+        <nav className="flex items-center justify-evenly w-1/2">
           <Link
             to="/"
             className="text-sm font-medium transition-colors duration-200 hover:text-purple-300"
@@ -73,32 +76,40 @@ const Index = () => {
         </nav>
 
       </header>
+
+
+
+      
       <section className="py-20 px-4">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+        <div className="flex flex-col gap-10 items-center">
+
+          <div className="flex flex-col">
+            <h2 className="text-4xl md:text-5xl font-bold text-black mb-4">
               About Me
             </h2>
             <div className="w-24 h-1 bg-gradient-to-r from-purple-500 to-pink-500 mx-auto rounded-full"></div>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-12 items-center">
+          <div className="grid md:grid-cols-2 gap-48 items-center">
+
+            {/* everything about my pookie */}
             <div className="space-y-6">
-              <p className="text-lg text-gray-300 leading-relaxed">
+              <p className="text-3xl">
                 Hello guys, I am Mr.Hemank
                 From Lucknow
               </p>
-              <p className="text-lg text-gray-300 leading-relaxed">
+              <p className="text-3xl">
                 I am non-vegitarian
               </p>
-              <p className="text-lg text-gray-300 leading-relaxed">
+              <p className="text-4xl">
                 I am proficient in Machine Learning.
               </p>
             </div>
             
+            {/* pookie ki photo */}
             <div className="flex justify-center">
               <div className="relative">
-                <img className="flex items-start justify-center rounded-full" src='./public/sexy-Hemank.jpeg'/>
+                <img className="flex items-start border-t-8 justify-center rounded-full" src='./public/sexy-Hemank.jpeg'/>
               </div>
             </div>
           </div>
