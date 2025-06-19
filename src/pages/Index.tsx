@@ -2,6 +2,10 @@ import React, { useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { TypeAnimation } from 'react-type-animation';
 
+// background: #1F2024
+// text-color: #D0D0D0
+// on-hover: #CCD7E4
+
 const Index = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const audioRef = useRef(null);
@@ -22,8 +26,8 @@ const Index = () => {
   };
 
   return (
-    <div className="flex flex-col relative min-h-screen w-full">
-      <header className="relative flex flex-row items-center justify-between py-4 px-4 sm:px-6 md:px-10 w-full mx-auto bg-white/30 backdrop-blur-md rounded-lg shadow-md">
+    <div className="flex flex-col text-[#D0D0D0] relative min-h-screen w-full bg-[#1F2024]">
+      <header className="relative flex flex-row items-center justify-between py-4 px-4 sm:px-6 md:px-10 w-full mx-auto backdrop-blur-md shadow-md">
         <div className="flex flex-row gap-4 items-center justify-center">
           <Link to="/" className="flex items-center">
             <img src="/its_arty.png" width={35} alt="arty_codes-image" className="w-8 sm:w-9" />
@@ -32,40 +36,40 @@ const Index = () => {
         </div>
         <div className="relative md:hidden">
           <button
-            className="text-sm font-medium transition-colors duration-200 hover:text-purple-300 py-2 md:py-0"
+            className="text-sm font-medium transition-colors duration-200 hover:text-[#B8D3E8] py-2 md:py-0"
             onClick={() => setMenuOpen(!menuOpen)}
           >
             MENU
           </button>
           {menuOpen && (
-            <div className="absolute top-full right-0 bg-white shadow-md rounded-lg mt-2 w-48">
+            <div className="absolute top-full right-0 bg-[#1F2024] shadow-md rounded-lg mt-2 w-48">
               <Link
           to="/"
-          className="block text-sm font-medium transition-colors duration-200 hover:text-purple-300 py-2 px-4"
+          className="block text-sm font-medium transition-colors duration-200 hover:text-[#B8D3E8] py-2 px-4"
               >
           HOME
               </Link>
               <Link
           to="/"
-          className="block text-sm font-medium transition-colors duration-200 hover:text-purple-300 py-2 px-4"
+          className="block text-sm font-medium transition-colors duration-200 hover:text-[#B8D3E8] py-2 px-4"
               >
           ABOUT
               </Link>
               <Link
           to="/"
-          className="block text-sm font-medium transition-colors duration-200 hover:text-purple-300 py-2 px-4"
+          className="block text-sm font-medium transition-colors duration-200 hover:text-[#B8D3E8] py-2 px-4"
               >
           PROJECTS
               </Link>
               <Link
           to="/"
-          className="block text-sm font-medium transition-colors duration-200 hover:text-purple-300 py-2 px-4"
+          className="block text-sm font-medium transition-colors duration-200 hover:text-[#B8D3E8] py-2 px-4"
               >
           SKILLS
               </Link>
               <Link
           to="/"
-          className="block text-sm font-medium transition-colors duration-200 hover:text-purple-300 py-2 px-4"
+          className="block text-sm font-medium transition-colors duration-200 hover:text-[#B8D3E8] py-2 px-4"
               >
           CONTACT
               </Link>
@@ -75,31 +79,31 @@ const Index = () => {
         <nav className="hidden md:flex flex-col md:flex-row items-center justify-evenly w-full md:w-1/2 mt-4 md:mt-0">
           <Link
             to="/"
-            className="text-sm font-medium transition-colors duration-200 hover:text-purple-300 py-2 md:py-0"
+            className="text-sm font-medium transition-colors duration-200 hover:text-[#B8D3E8] py-2 md:py-0"
           >
             HOME
           </Link>
           <Link
             to="/"
-            className="text-sm font-medium transition-colors duration-200 hover:text-purple-300 py-2 md:py-0"
+            className="text-sm font-medium transition-colors duration-200 hover:text-[#B8D3E8] py-2 md:py-0"
           >
             ABOUT
           </Link>
           <Link
             to="/"
-            className="text-sm font-medium transition-colors duration-200 hover:text-purple-300 py-2 md:py-0"
+            className="text-sm font-medium transition-colors duration-200 hover:text-[#B8D3E8] py-2 md:py-0"
           >
             PROJECTS
           </Link>
           <Link
             to="/"
-            className="text-sm font-medium transition-colors duration-200 hover:text-purple-300 py-2 md:py-0"
+            className="text-sm font-medium transition-colors duration-200 hover:text-[#B8D3E8] py-2 md:py-0"
           >
             SKILLS
           </Link>
           <Link
             to="/"
-            className="text-sm font-medium transition-colors duration-200 hover:text-purple-300 py-2 md:py-0"
+            className="text-sm font-medium transition-colors duration-200 hover:text-[#B8D3E8] py-2 md:py-0"
           >
             CONTACT
           </Link>
@@ -128,7 +132,7 @@ const Index = () => {
               ]}
               wrapper='span'
               speed={50}
-              className='text-2xl sm:text-3xl md:text-4xl font-semibold text-black'
+              className='text-2xl text-[#B8D3E8] sm:text-3xl md:text-4xl font-semibold'
               repeat={Infinity}
             />
           </div>
