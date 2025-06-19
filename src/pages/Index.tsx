@@ -1,9 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import {TypeAnimation} from 'react-type-animation'
+import { TypeAnimation } from 'react-type-animation';
 
 const Index = () => {
-
   const [activeSection, setActiveSection] = useState('home');
 
   return (
@@ -36,38 +35,88 @@ const Index = () => {
 
       <section className="py-20 px-4">
         <div className="flex flex-col gap-10">
-
-            <div className="flex flex-col space-y-6 pl-36 pt-20 pr-96 mr-96">
+          <div className="flex flex-col space-y-6 pl-36 pt-20 pr-96 mr-96">
             <p className="text-2xl w-full">
               Hello guys, I am Mr.Hemank From Lucknow
             </p>
             <p className="text-2xl">I am a non-vegetarian</p>
-            <TypeAnimation 
-            sequence={[
-              'I am proficient in Machine Learning.',
-              1500,
-              "My models overfit like my jeans!",
-              1500,
-              "My accuracy's high, but my life's a lie!",
-              1500,
-              "My model's confused, just like me!",
-              1500,
-            ]}
-            wrapper='span'
-            speed={50}
-            className='text-4xl font-semibold text-black'
-            repeat={Infinity}
+            <TypeAnimation
+              sequence={[
+                'I am proficient in Machine Learning.',
+                1500,
+                "My models overfit like my jeans!",
+                1500,
+                "My accuracy's high, but my life's a lie!",
+                1500,
+                "My model's confused, just like me!",
+                1500,
+              ]}
+              wrapper='span'
+              speed={50}
+              className='text-4xl font-semibold text-black'
+              repeat={Infinity}
             />
-            </div>
+          </div>
           <div className="absolute right-36">
-            <img
-              className="border-t-8 rounded-full"
-              src="/sexy-hemank.jpeg"
-              alt="Hemank"
-            />
+            <div className="glitch-wrapper">
+              <img
+                className="border-t-8 rounded-full glitch-image"
+                src="/sexy-hemank.jpeg"
+                alt="Hemank"
+              />
+            </div>
           </div>
         </div>
       </section>
+
+      <style>{`
+        .glitch-wrapper {
+          position: relative;
+          overflow: hidden;
+        }
+
+        .glitch-image {
+          transition: all 0.1s ease;
+        }
+
+        .glitch-image:hover {
+          animation: glitch 0.4s infinite linear alternate;
+          position: relative;
+        }
+
+        @keyframes glitch {
+          0% {
+            transform: translate(0, 0);
+            filter: none;
+            box-shadow: none;
+          }
+          20% {
+            transform: translate(-5px, 5px);
+            filter: hue-rotate(50deg);
+            box-shadow: 3px 0 0 red, -3px 0 0 cyan;
+          }
+          40% {
+            transform: translate(5px, -5px);
+            filter: hue-rotate(-50deg);
+            box-shadow: -3px 0 0 red, 3px 0 0 cyan;
+          }
+          60% {
+            transform: translate(-5px, 5px);
+            filter: hue-rotate(50deg);
+            box-shadow: 3px 0 0 red, -3px 0 0 cyan;
+          }
+          80% {
+            transform: translate(5px, -5px);
+            filter: hue-rotate(-50deg);
+            box-shadow: -3px 0 0 red, 3px 0 0 cyan;
+          }
+          100% {
+            transform: translate(0, 0);
+            filter: none;
+            box-shadow: none;
+          }
+        }
+      `}</style>
     </div>
   );
 };
