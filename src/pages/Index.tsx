@@ -1,9 +1,24 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { TypeAnimation } from 'react-type-animation';
 
 const Index = () => {
-  const [activeSection, setActiveSection] = useState('home');
+  const audioRef = useRef(null);
+
+  const handleMouseEnter = () => {
+    if (audioRef.current) {
+      audioRef.current.play().catch((error) => {
+        console.error('Error playing audio:', error);
+      });
+    }
+  };
+
+  const handleMouseLeave = () => {
+    if (audioRef.current) {
+      audioRef.current.pause();
+      audioRef.current.currentTime = 0; // Reset to start
+    }
+  };
 
   return (
     <div className="flex flex-col relative min-h-screen w-full">
@@ -37,7 +52,9 @@ const Index = () => {
         <div className="flex flex-col gap-10">
           <div className="flex flex-col space-y-6 pl-36 pt-20 pr-96 mr-96">
             <p className="text-2xl w-full">
-              Hello guys, I am Mr.Hemank From Lucknow
+              Hello guys, I am Mr.Hemank 
+              <br></br>
+              From Lucknow
             </p>
             <p className="text-2xl">I am a non-vegetarian</p>
             <TypeAnimation
@@ -60,11 +77,14 @@ const Index = () => {
           <div className="absolute right-36">
             <div className="glitch-wrapper">
               <img
-                className="border-t-8 rounded-full glitch-image"
+                className="rounded-full glitch-image"
                 src="/sexy-hemank.jpeg"
                 alt="Hemank"
+                onMouseEnter={handleMouseEnter}
+                onMouseLeave={handleMouseLeave}
               />
             </div>
+            <audio ref={audioRef} src="/chipi_chipi_song.mp3" loop />
           </div>
         </div>
       </section>
