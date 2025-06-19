@@ -98,7 +98,7 @@ const Index = () => {
             
             <div className="flex justify-center">
               <div className="relative">
-                <img src='./sexy-Hemank.png'
+                <img className="flex items-start justify-center rounded-full" src='./public/sexy-Hemank.jpeg'/>
               </div>
             </div>
           </div>
